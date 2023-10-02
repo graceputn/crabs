@@ -18,25 +18,25 @@ captPt9 = [2*captSize;captSize/2;1]; %left top of head
 captPt10 = [captSize;captSize/2;1]; %left neck
 
 %hand
-captPt11 = [0;2*captSize;1] %left hand
-captPt12 = [0;-2*captSize;1] %right hand
+captPt11 = [0;2*captSize;1]; %left hand
+captPt12 = [0;-2*captSize;1]; %right hand
 
-%spear (right)
+%spear (right) *****CHANGE TO NET*****
 captPt13 = [3*captSize;-2*captSize;1]; % tip
 captPt14 = [-captSize;-2*captSize;1];
 
 %spear (left)
-captPt15 = [3*captSize;2*captSize;1]; % tip
-captPt16 = [-captSize;2*captSize;1];
+%captPt15 = [3*captSize;2*captSize;1]; % tip
+%captPt16 = [-captSize;2*captSize;1];
 
 %elbows
 captPt17 = [captSize/2.5;-1.5*captSize;1]; %right
 captPt18 = [captSize/2.5;1.5*captSize;1]; %left
 
 %spear jab (right hand)
-captPt19 = [captSize;-2*captSize;1] %right hand
-captPt20 = [5*captSize;-2*captSize;1]; % tip
-captPt21 = [0;-2*captSize;1];
+%captPt19 = [captSize;-2*captSize;1]; %right hand
+%captPt20 = [5*captSize;-2*captSize;1]; % tip
+%captPt21 = [0;-2*captSize;1];
 
 %if(moveArm=="true")
 %spear jab (right hand)

@@ -10,7 +10,7 @@ x=[ p(1) ; q(1) ];
 % extract the y coordinates
 y=[ p(2) ; q(2) ];
 
-handle = plot(x,y,mycolor)
+handle = plot(x,y,mycolor);
 
 set(handle, "LineWidth", 1.75);
 
