@@ -10,7 +10,7 @@ function crabs ()
 % Initialize captain location, heading and size
 xCapt = 1000;
 yCapt = 500;
-thetaCapt = pi/2;
+thetaCapt = -pi/2;
 sizeCapt = 50;
 
 
@@ -27,7 +27,7 @@ cmd = "null";
   %read the keyboard
   cmd = kbhit();
   
-    if( cmd == "w" || cmd == "a" || cmd == "d")
+    if( cmd == "w" || cmd == "a" || cmd == "d" || cmd == "s")
     
       %erase old captain
       for i=1:length(captainGraphics)
@@ -35,7 +35,7 @@ cmd = "null";
       endfor
       
       %move captain
-      [xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt);
+      [xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,mapWidth,mapHeight,sizeCapt);
       
       %draw new captain
       captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt);
