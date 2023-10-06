@@ -23,28 +23,28 @@ captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt);
 cmd = "null";
 
   while(cmd !="Q")
-  
+
   %read the keyboard
   cmd = kbhit();
-  
+
     if( cmd == "w" || cmd == "a" || cmd == "d" || cmd == "s")
-    
+
       %erase old captain
       for i=1:length(captainGraphics)
         set(captainGraphics(i),'Visible','off');
       endfor
-      
+
       %move captain
       [xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,mapWidth,mapHeight,sizeCapt);
-      
+
       %draw new captain
       captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt);
-  
+
     endif
 
-  endwhile 
+  endwhile
 
 close all
-  
+
 endfunction
 
