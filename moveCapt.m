@@ -9,13 +9,13 @@ function [xCapt,yCapt,thetaCapt] = moveCapt (cmd,x,y,theta,width,height,size)
     xTemp = x + dStep*cos(theta);
     yTemp = y + dStep*sin(theta);
 
-    if(isOnMap(xTemp,yTemp,width,height,size))
+    if(isOnMap (xTemp, yTemp, width, height, size))
       xCapt = xTemp;
       yCapt = yTemp;
 
     else
-      xCapt= x;
-      yCapt= y;
+     xCapt= x;
+     yCapt= y;
 
     endif
 
@@ -34,7 +34,7 @@ function [xCapt,yCapt,thetaCapt] = moveCapt (cmd,x,y,theta,width,height,size)
       thetaCapt = theta - dTheta;
 
     elseif (cmd == "d")
-      %turn right
+      %rotate right
       xCapt = x;
       yCapt = y;
       thetaCapt = theta + dTheta;

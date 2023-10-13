@@ -1,15 +1,15 @@
 
-function captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt)
+function captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , captSize)
 % In the future, this function will draw the captain at the given
 % position (xCapt , yCapt) , with heading thetaCapt.
 % For now, it draws the captain at the (0, 0) with 0 heading.
 % This function returns a vector of graphics handles called captainGrapics.
 % The ith vector entry contains the graphics handle of ith line of the captain.
 % Use your code from last week to get the captain matrix
-% for a captain of dimension sizeCapt. Notice that
-% sizeCapt is a parameter passed into drawCapt.
+% for a captain of dimension captSize. Notice that
+% captSize is a parameter passed into drawCapt.
 
-capt = getCapt(sizeCapt);
+capt = getCapt(captSize);
 
 % Rotates captain
 R=getRotation(thetaCapt);
