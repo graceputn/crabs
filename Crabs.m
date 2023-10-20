@@ -1,5 +1,5 @@
 
-function crabs ()
+function Crabs (level)
 
 % Crabs is a kids computer game where a fisherman, called the captain,
 % hunts for a very clever and powerful crab.
@@ -19,29 +19,48 @@ yCrab = 1200;
 thetaCrab = -pi/2;
 crabSize = 50;
 
+%initialize jelly location, heading, and size
+xJelly = rand*mapWidth;
+yJelly = 0;
+thetaJelly = -pi/2;
+jellySize = 25;
+
 % Draw initail captain and crab
 captGraphics = drawCapt (xCapt , yCapt , thetaCapt , captSize);
 crabGraphics = drawCrab (xCrab , yCrab , thetaCrab , crabSize);
-
+jellyGraphics = drawJelly (xJelly, yJelly, thetaJelly, jellySize);
 
 
 % initial command
-cmd = "null";
 
-  while(cmd !="Q")
+  while(1)
+  
+  %erase old jelly
+  for i=1:length(jellyGraphics)
+    delete(jellyGraphics(i));
+  endfor
+ 
+  %move jellyfish
+  [xJelly,yJelly,thetaJelly] = moveJelly (level,xJelly,yJelly,thetaJelly,mapHeight,mapWidth,jellySize);
+  
+  %draw new jellyfish
+  jellyGraphics = drawJelly (xJelly, yJelly, thetaJelly, jellySize);
 
   %read the keyboard
-  cmd = kbhit();
-
+  cmd = kbhit(1);
+  if (cmd =="Q")
+      break
+  endif
+  
     if( cmd == "w" || cmd == "a" || cmd == "d" || cmd == "s")
 
       %erase old captain
       for i=1:length(captGraphics)
-        set(captGraphics(i),'Visible','off');
+        delete(captGraphics(i));
       endfor
 
       %move captain
-      [xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,mapWidth,mapHeight,captSize);
+      [xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,mapHeight,mapWidth,captSize);
 
       %draw new captain
       captGraphics = drawCapt (xCapt , yCapt , thetaCapt , captSize);
@@ -50,17 +69,20 @@ cmd = "null";
 
       %erase old crab
        for i=1:length(crabGraphics)
-         set(crabGraphics(i),'Visible','off');
+         delete(crabGraphics(i));
        endfor
 
       %move crab
-      [xCrab,yCrab,thetaCrab] = moveCrab(cmd,xCrab,yCrab,thetaCrab,mapWidth,mapHeight,crabSize);
+      [xCrab,yCrab,thetaCrab] = moveCrab(cmd,xCrab,yCrab,thetaCrab,mapHeight,mapWidth,crabSize);
 
-      %draw new captain and crab
+      %draw new crab
       crabGraphics = drawCrab(xCrab,yCrab,thetaCrab,crabSize);
 
     endif
 
+    fflush(stdout);
+    pause(0.01)
+    
   endwhile
 
 close all

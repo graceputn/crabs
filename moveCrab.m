@@ -1,5 +1,5 @@
 
-function [xCrab, yCrab, thetaCrab] = moveCrab (cmd, x, y, theta, width, height, size)
+function [xCrab, yCrab, thetaCrab] = moveCrab (cmd, x, y, theta, height, width, size)
 
   % This fucntion walks the crab sideways, swims the crab backwards and rotates it using the resolutions.
   % This crab can swim backwards such as the portunidae crab.
@@ -16,7 +16,7 @@ function [xCrab, yCrab, thetaCrab] = moveCrab (cmd, x, y, theta, width, height, 
     xTemp = x + dStep * sin(theta);
     yTemp = y - dStep * cos(theta);
 
-      if(isOnMap (xTemp, yTemp, width, height, size))
+      if(isOnMap (xTemp, yTemp, height, width, size))
 
         xCrab = xTemp;
         yCrab = yTemp;

@@ -1,5 +1,5 @@
 
-function mapCheck = isOnMap (x,y,width,height,size)
+function mapCheck = isOnMap (x,y,height,width,size)
 
   if(x >0 && x < width && y > 0 && y < height)
    mapCheck = 1;

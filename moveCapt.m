@@ -1,5 +1,5 @@
 
-function [xCapt,yCapt,thetaCapt] = moveCapt (cmd,x,y,theta,width,height,size)
+function [xCapt,yCapt,thetaCapt] = moveCapt (cmd,x,y,theta,height,width,size)
 
   dTheta = pi/6;
   dStep = 50;
@@ -9,7 +9,7 @@ function [xCapt,yCapt,thetaCapt] = moveCapt (cmd,x,y,theta,width,height,size)
     xTemp = x + dStep*cos(theta);
     yTemp = y + dStep*sin(theta);
 
-    if(isOnMap (xTemp, yTemp, width, height, size))
+    if(isOnMap (xTemp, yTemp, height, width, size))
       xCapt = xTemp;
       yCapt = yTemp;
 
