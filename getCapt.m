@@ -28,6 +28,7 @@ captPt15 = [2*captSize;-captSize;1]; %left bottom corner of net
 captPt16 = [2*captSize;-3*captSize;1]; %right bottom corner of net
 captPt17 = [4*captSize;-captSize;1]; % left top corner of net
 captPt18 = [4*captSize;-3*captSize;1]; %right top corner of net
+captPt21 = [3*captSize;-2*captSize;1]; %middle point of the net
 
 %elbows
 captPt19 = [captSize/2.5;-1.5*captSize;1]; %right
@@ -35,6 +36,6 @@ captPt20 = [captSize/2.5;1.5*captSize;1]; %left
 
 
 
-capt=[captPt1, captPt2, captPt3, captPt4, captPt5, captPt6, captPt7, captPt8, captPt9, captPt10, captPt11, captPt12, captPt13, captPt14, captPt15, captPt16 ,captPt17, captPt18, captPt19, captPt20];
+capt=[captPt1, captPt2, captPt3, captPt4, captPt5, captPt6, captPt7, captPt8, captPt9, captPt10, captPt11, captPt12, captPt13, captPt14, captPt15, captPt16 ,captPt17, captPt18, captPt19, captPt20, captPt21];
 
 endfunction
